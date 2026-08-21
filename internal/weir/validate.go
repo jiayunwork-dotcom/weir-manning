@@ -17,7 +17,7 @@ func ValidateInputs(b, cd, head float64) error {
 		return ErrCoefficient
 	}
 	if head <= 0 {
-		return ErrHead
+		return commitHead(ErrHead)
 	}
 	return nil
 }
