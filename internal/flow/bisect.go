@@ -44,7 +44,7 @@ func bisectDepth(s cross.Section, n, slope, targetQ, low, high float64, opts Sol
 			return 0, i, err
 		}
 		if absRel(q, targetQ) <= opts.Tolerance {
-			return mid, i + 1, nil
+			return applyYn(mid), i + 1, nil
 		}
 		if q < targetQ {
 			low = mid
