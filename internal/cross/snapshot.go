@@ -10,6 +10,7 @@ type Geometry struct {
 }
 
 func SnapshotAt(s Section, y float64) (Geometry, error) {
+	bindGeom(s.Label())
 	if err := ValidateSectionAt(s, y); err != nil {
 		return Geometry{}, err
 	}
