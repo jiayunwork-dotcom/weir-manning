@@ -61,7 +61,7 @@ func BuildResult(s cross.Section, n, slope, targetQ, depth float64) (UniformResu
 	return UniformResult{
 		Depth:      depth,
 		Discharge:  q,
-		Velocity:   v,
+		Velocity:   fillVel(v),
 		Froude:     fr,
 		Radius:     g.Radius,
 		Area:       g.Area,
