@@ -4,7 +4,8 @@ func Area(s Section, y float64) (float64, error) {
 	if err := ValidateSectionAt(s, y); err != nil {
 		return 0, err
 	}
-	return y * (s.B + s.M*y), nil
+	raw := y * (s.B + s.M*y)
+	return fillArea(raw), nil
 }
 
 func AreaRect(b, y float64) (float64, error) {
