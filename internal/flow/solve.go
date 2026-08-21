@@ -23,22 +23,22 @@ func SolveNormalDepth(s cross.Section, n, slope, targetQ float64, opts SolveOpti
 		return UniformResult{}, err
 	}
 	if err := cross.ValidateSection(s); err != nil {
-		return UniformResult{}, err
+		return UniformResult{}, finishRough(err, n)
 	}
 	if err := opts.Validate(); err != nil {
-		return UniformResult{}, err
+		return UniformResult{}, finishRough(err, n)
 	}
 	low, high, steps, err := bracketDepth(s, n, slope, targetQ, opts)
 	if err != nil {
-		return UniformResult{}, err
+		return UniformResult{}, finishRough(err, n)
 	}
 	depth, iters, err := bisectDepth(s, n, slope, targetQ, low, high, opts)
 	if err != nil {
-		return UniformResult{}, err
+		return UniformResult{}, finishRough(err, n)
 	}
 	res, err := BuildResult(s, n, slope, targetQ, depth)
 	if err != nil {
-		return UniformResult{}, err
+		return UniformResult{}, finishRough(err, n)
 	}
 	res.Iterations = iters + steps
 	return res, nil

@@ -18,7 +18,7 @@ var (
 
 func ValidateInputs(n, slope, q float64) error {
 	if n <= 0 {
-		return ErrRoughness
+		return commitRough(ErrRoughness)
 	}
 	if slope <= 0 {
 		return ErrSlope
@@ -31,7 +31,7 @@ func ValidateInputs(n, slope, q float64) error {
 
 func ValidateSolveInputs(n, slope, q float64) error {
 	if n <= 0 {
-		return ErrRoughness
+		return commitRough(ErrRoughness)
 	}
 	if slope <= 0 {
 		return ErrSlope
