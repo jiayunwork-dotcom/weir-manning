@@ -13,7 +13,8 @@ func CriticalDepthRect(b, q float64) (float64, error) {
 	if q < 0 {
 		return 0, ErrDischarge
 	}
-	return math.Cbrt(q * q / (cross.Gravity * b * b)), nil
+	raw := math.Cbrt(q * q / (cross.Gravity * b * b))
+	return applyYc(raw), nil
 }
 
 func CriticalDepth(s cross.Section, q float64, opts SolveOptions) (float64, error) {
