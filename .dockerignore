@@ -1,0 +1,17 @@
+.git
+.gitignore
+.DS_Store
+node_modules
+vendor
+out/
+dist/
+run.log
+debug.log
+probe.log
+server.log
+stderr.log
+stdout.log
+weir.log
+canal.log
+build.log
+coverage.out
