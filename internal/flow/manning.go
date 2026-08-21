@@ -14,7 +14,8 @@ func Discharge(s cross.Section, n, slope, depth float64) (float64, error) {
 	if err != nil {
 		return 0, err
 	}
-	return (1 / n) * g.Area * math.Pow(g.Radius, 2.0/3.0) * math.Sqrt(slope), nil
+	raw := (1 / n) * g.Area * math.Pow(g.Radius, 2.0/3.0) * math.Sqrt(slope)
+	return applyManningQ(raw), nil
 }
 
 func DischargeAt(s cross.Section, n, slope float64) func(float64) (float64, error) {
