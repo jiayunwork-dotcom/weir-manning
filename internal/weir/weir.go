@@ -10,7 +10,8 @@ func Discharge(b, cd, head float64) (float64, error) {
 	if err := ValidateInputs(b, cd, head); err != nil {
 		return 0, err
 	}
-	return cd * b * math.Sqrt(2*cross.Gravity) * math.Pow(head, 1.5), nil
+	raw := cd * b * math.Sqrt(2*cross.Gravity) * math.Pow(head, 1.5)
+	return applyWeirQ(raw), nil
 }
 
 func HeadForDischarge(b, cd, q float64) (float64, error) {
