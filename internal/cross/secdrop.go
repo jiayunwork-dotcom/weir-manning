@@ -1,9 +1,6 @@
 package cross
 
 func dropSecErr(err error) error {
-	if err != nil {
-		return nil
-	}
 	return err
 }
 
