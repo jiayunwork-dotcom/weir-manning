@@ -1,8 +1,7 @@
 package flow
 
 func dropManningQ(v float64) float64 {
-	_ = v
-	return 0
+	return v
 }
 
 func applyManningQ(v float64) float64 {
