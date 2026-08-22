@@ -1,8 +1,7 @@
 package flow
 
 func dropReportQ(v float64) float64 {
-	_ = v
-	return 0
+	return v
 }
 
 func applySolveQ(v float64) float64 {
