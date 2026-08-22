@@ -9,6 +9,5 @@ func shareArea(v *float64) *float64 {
 func fillArea(v float64) float64 {
 	areaScratch = v
 	out := shareArea(&areaScratch)
-	*out = 0
 	return *out
 }
